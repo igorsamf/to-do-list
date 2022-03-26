@@ -20,9 +20,16 @@ btn.addEventListener("click", recebeClick);
 //https://pt.stackoverflow.com/questions/225809/como-adicionar-uma-classe-em-javascript-puro
 
 function criarCinza(event) {
+    let acessarLista = document.querySelector('.cinza')
+    if (acessarLista) {
+      acessarLista.classList.toggle("cinza");  
+    }
     event.target.classList.toggle('cinza');
 }
 listaTarefas.addEventListener('click', criarCinza);
 
-
-
+function riscarTarefa(event) {
+    event.target.classList.toggle('completed');
+    
+}
+listaTarefas.addEventListener('dblclick', riscarTarefa);
