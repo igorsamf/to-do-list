@@ -5,7 +5,7 @@ const listaTarefas = document.getElementById('lista-tarefas');
 let input = document.querySelector('#texto-tarefa');
 let btn = document.getElementById("criar-tarefa");
 let listCreated = document.getElementsByTagName('li');
-
+console.log(listCreated)
 
 function recebeClick() {
     let list = document.createElement('li');
@@ -16,10 +16,13 @@ function recebeClick() {
 
 btn.addEventListener("click", recebeClick);
 
-function turnGray(event) {
-    for (let i = 0; i < listCreated.length; i =+ 1) {
-        listCreated[i].style.backgroundColor = '';
-    }
-    event.target.style.backgroundColor = 'gray';
+//Referências: 
+//https://pt.stackoverflow.com/questions/225809/como-adicionar-uma-classe-em-javascript-puro
+
+function criarCinza(event) {
+    event.target.classList.toggle('cinza');
 }
-listaTarefas.addEventListener('click', turnGray);
+listaTarefas.addEventListener('click', criarCinza);
+
+
+
